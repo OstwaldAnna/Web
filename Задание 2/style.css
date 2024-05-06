@@ -1,0 +1,50 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.header, .footer {
+    height: 150px; /* для шапки */
+    background-color: #4CAF50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.footer {
+    height: 100px; /* для подвала */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: calc(100% - 250px); /* вычетаем высоту шапки и подвала */
+}
+
+.menu {
+    width: 200px;
+    background-color: #f4f4f4;
+    height: 300px; /* фиксированная высота меню */
+    padding: 20px;
+}
+
+.content {
+    flex-grow: 1;
+    background-color: #ddd;
+    padding: 20px;
+    min-height: 400px; /* минимальная высота контента */
+}
+
+@media print {
+    .header, .footer, .menu {
+        display: none; /* скрыть все блоки кроме контента при печати */
+    }
+    .content {
+        width: 100%; /* контент на всю ширину страницы при печати */
+    }
+}
